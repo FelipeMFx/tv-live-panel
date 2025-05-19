@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="common.css" />
+</head>
+<body class="bg-white">
+    <div class="fixed inset-0 bg-white flex justify-center items-start pt-10">
+        <div class="max-w-6xl w-full px-6">
+            <header class="border-b border-gray-200 mb-6">
+                <div class="flex items-center gap-4">
+                    <button onclick="goBack()" class="flex items-center gap-2 text-gray-600 hover:text-gray-800">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                        <span>Voltar</span>
+                    </button>
+                    <span class="text-sm">Editar imagens de fundo (1920 x 1080)</span>
+                </div>
+            </header>
+
+            <main class="overflow-auto">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xs mb-2">TV Neutro</h3>
+                            <div class="bg-orange-50 aspect-video rounded-sm mb-2">
+                                <div class="h-full flex items-center justify-center">
+                                    <img src="https://via.placeholder.com/120x60?text=TV+AgRoss" alt="TV Neutro" class="max-w-full">
+                                </div>
+                            </div>
+                            <button class="w-full bg-[#4285f4] text-white text-sm h-11 rounded">Alterar imagem</button>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xs mb-2">TV Sorteio Números</h3>
+                            <div class="bg-orange-50 aspect-video rounded-sm mb-2">
+                                <div class="h-full flex items-center justify-center overflow-hidden">
+                                    <div class="text-[480px] leading-[0.55] font-mono text-orange-500">4321</div>
+                                </div>
+                            </div>
+                            <button class="w-full bg-[#4285f4] text-white text-sm h-11 rounded">Alterar imagem</button>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xs mb-2">TV 1 vencedor</h3>
+                            <div class="bg-gray-100 aspect-video rounded-sm mb-2"></div>
+                            <button class="w-full bg-[#4285f4] text-white text-sm h-11 rounded">Alterar imagem</button>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xs mb-2">TV Roleta</h3>
+                            <div class="bg-gray-100 aspect-video rounded-sm mb-2"></div>
+                            <button class="w-full bg-[#4285f4] text-white text-sm h-11 rounded">Alterar imagem</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
