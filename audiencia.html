@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="common.css" />
+    <style>
+        .stats-card {
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen">
+    <div class="flex min-h-screen">
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Header -->
+            <header class="flex items-center justify-between px-4 py-2 bg-white border-b">
+                <div class="text-sm font-semibold">
+                    Painel <span class="uppercase font-bold">AO VIVO</span>
+                </div>
+                <div class="text-sm font-semibold">
+                    TV: <span class="font-bold">03/04/2025</span> | Usuário: <span class="font-bold">Guido Possi</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button class="bg-red-400 hover:bg-red-500 text-white text-xs font-medium px-3 py-1 rounded">
+                        Finalizar TV de hoje
+                    </button>
+                    <a href="editar-imagens.html" class="bg-blue-500 hover:bg-blue-600 text-white text-xs font-medium px-3 py-1 rounded inline-flex items-center gap-1">
+                        <i class="fas fa-cog mr-1"></i>Configurações
+                    </a>
+                </div>
+            </header>
+
+            <!-- Navigation -->
+            <nav class="flex flex-wrap gap-2 px-4 py-2 bg-white border-b">
+                <a href="index.html" class="bg-gray-300 text-gray-700 rounded px-4 py-1.5 text-sm font-semibold hover:bg-gray-400">
+                    Sorteio NF Premiada
+                </a>
+                <a href="premio-bola-maior.html" class="bg-gray-300 text-gray-700 rounded px-4 py-1.5 text-sm font-semibold hover:bg-gray-400">
+                    Prêmio Extra
+                </a>
+                <a href="palpite-premiado.html" class="bg-gray-300 text-gray-700 rounded px-4 py-1.5 text-sm font-semibold hover:bg-gray-400">
+                    Palpite Premiado
+                </a>
+                <a href="audiencia.html" class="bg-green-400 text-white rounded px-4 py-1.5 text-sm font-semibold hover:bg-green-500">
+                    Audiência
+                </a>
+                <a href="fotos-comentarios.html" class="bg-gray-300 text-gray-700 rounded px-4 py-1.5 text-sm font-semibold hover:bg-gray-400">
+                    Fotos / Comentários
+                </a>
+                <a href="sorteios.html" class="bg-gray-300 text-gray-700 rounded px-4 py-1.5 text-sm font-semibold hover:bg-gray-400">
+                    Sorteio GRV/GRR/Festão
+                </a>
+                <a href="premiacoes.html" class="bg-gray-300 text-gray-700 rounded px-4 py-1.5 text-sm font-semibold hover:bg-gray-400">
+                    Premiações
+                </a>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 p-4 overflow-auto">
+                <div class="content-container content-wrapper space-y-6">
+                    <!-- Header Stats -->
+                    <div class="rounded-lg shadow-sm p-6 mb-6 hover:shadow-md transition-shadow">
+                        <div class="flex flex-wrap items-center justify-between mb-4">
+                            <div class="flex items-center gap-4">
+                                <button class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors">
+                                    Hoje
+                                </button>
+                                <h2 class="text-xl font-semibold">03/04/2025</h2>
+                            </div>
+                            <button class="text-blue-600 hover:text-blue-700 transition-colors">
+                                Ver outras datas
+                            </button>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                            <div class="stats-card rounded-lg p-4 border border-gray-200 hover:shadow-md transition-shadow">
+                                <div class="text-sm text-gray-600 mb-2">Total entradas:</div>
+                                <div class="text-2xl font-bold">120</div>
+                            </div>
+                            <div class="stats-card rounded-lg p-4 border border-gray-200 hover:shadow-md transition-shadow">
+                                <div class="text-sm text-red-600 mb-2">Saíram:</div>
+                                <div class="text-2xl font-bold text-red-600">37</div>
+                            </div>
+                            <div class="stats-card rounded-lg p-4 border border-gray-200 hover:shadow-md transition-shadow">
+                                <div class="text-sm text-green-600 mb-2">Online agora:</div>
+                                <div class="text-2xl font-bold text-green-600">83</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-6 border-gray-300">
+
+                    <!-- Audience Table -->
+                    <div class="rounded-lg shadow-sm p-6 mb-6 hover:shadow-md transition-shadow">
+                        <div class="overflow-x-auto scrollbar-thin border border-gray-200 rounded-lg">
+                            <table class="min-w-full">
+                                <thead>
+                                    <tr>
+                                        <th>On</th>
+                                        <th>Nome Fantasia</th>
+                                        <th>Razão Social</th>
+                                        <th>Extra</th>
+                                        <th>Centena</th>
+                                        <th>Milhar</th>
+                                        <th>NF</th>
+                                        <th>Unidade</th>
+                                        <th>Cidade/UF</th>
+                                        <th>Batida</th>
+                                        <th>Inadimp</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                        </td>
+                                        <td>Braga Araújo</td>
+                                        <td>Comercio de Insum...</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td class="text-blue-600">9321</td>
+                                        <td>Sete Lagoas</td>
+                                        <td>Pirapora Nossa/MG</td>
+                                        <td>16:32</td>
+                                        <td>—</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Audience Graph -->
+                    <div class="rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold mb-4">Audiência no período:</h3>
+                        <div class="h-64">
+                            <canvas id="audienceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <div class="right-panel-content">
+                <div class="right-panel-inner">
+                    <div class="flex flex-col space-y-4">
+                        <h2 class="text-sm font-semibold">Painel Exibir: NF Premiada/Extra/Fotos</h2>
+                        <a href="editar-imagens.html" class="btn-edit-bg">
+                            Editar imagens de fundo
+                        </a>
+                    </div>
+
+                    <hr class="my-6 border-gray-300">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <p class="text-sm mb-2 text-center">Sorteio</p>
+                            <div class="bg-white rounded-lg p-2 text-center">
+                                <div class="grid grid-cols-4 text-4xl font-mono text-orange-500">
+                                    <span>4</span>
+                                    <span>3</span>
+                                    <span>2</span>
+                                    <span>1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-sm mb-2 text-center">Neutro</p>
+                            <div class="bg-gradient-to-r from-orange-400 to-orange-500 rounded-lg p-2 flex items-center justify-center">
+                                <img src="https://via.placeholder.com/120x60?text=TV+AgRoss" alt="TV AgRoss" class="max-w-full" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sorteio Sections -->
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-sm font-semibold mb-2 text-center">1º Sorteio</h3>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-white p-2 rounded border text-center text-xs">
+                                    <img src="https://via.placeholder.com/80" alt="Premio" class="mx-auto mb-1" />
+                                    <p>Prêmio Centena</p>
+                                </div>
+                                <div class="bg-white p-2 rounded border text-center text-xs">
+                                    <img src="https://via.placeholder.com/80" alt="Premio" class="mx-auto mb-1" />
+                                    <p>Prêmio Milhar</p>
+                                </div>
+                                <div class="bg-white p-2 rounded border text-center text-xs">
+                                    <img src="https://via.placeholder.com/80" alt="Premio" class="mx-auto mb-1" />
+                                    <p>Prêmio Extra</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-sm font-semibold mb-2 text-center">2º Sorteio</h3>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="bg-white p-2 rounded border text-center text-xs">
+                                    <img src="https://via.placeholder.com/80" alt="Premio" class="mx-auto mb-1" />
+                                </div>
+                                <div class="bg-white p-2 rounded border text-center text-xs">
+                                    <img src="https://via.placeholder.com/80" alt="Premio" class="mx-auto mb-1" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-sm font-semibold mb-2 text-center">3º Sorteio</h3>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="bg-white p-2 rounded border text-center text-xs">
+                                    <img src="https://via.placeholder.com/80" alt="Premio" class="mx-auto mb-1" />
+                                </div>
+                                <div class="bg-white p-2 rounded border text-center text-xs">
+                                    <img src="https://via.placeholder.com/80" alt="Premio" class="mx-auto mb-1" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fotos & Comentários -->
+                    <div class="flex gap-2 mt-4">
+                        <button class="flex-1 bg-green-400 hover:bg-green-500 text-white text-sm font-semibold py-1 px-2 rounded relative">
+                            Fotos
+                            <span class="absolute -top-1 -right-1 bg-gray-700 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">4</span>
+                        </button>
+                        <button class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm font-semibold py-1 px-2 rounded relative">
+                            Comentários
+                            <span class="absolute -top-1 -right-1 bg-gray-700 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">7</span>
+                        </button>
+                    </div>
+
+                    <!-- Fotos Gallery -->
+                    <div class="mt-4 px-2">
+                        <div class="grid grid-cols-3 gap-2">
+                            <img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Exemplo 1" class="rounded object-cover w-full h-16">
+                            <img src="https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600" alt="Exemplo 2" class="rounded object-cover w-full h-16">
+                            <img src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Exemplo 3" class="rounded object-cover w-full h-16">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize the audience chart
+        const ctx = document.getElementById('audienceChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['1 mês', '6 meses', '1 ano', '2 anos', 'Geral'],
+                datasets: [{
+                    label: 'Audiência',
+                    data: [150, 180, 200, 170, 190],
+                    backgroundColor: '#4CAF50',
+                    borderColor: '#388E3C',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
