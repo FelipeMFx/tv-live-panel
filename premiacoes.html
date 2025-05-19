@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="common.css" />
+    <style>
+        .year-button {
+            transition: all 0.3s ease;
+        }
+        .year-button.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen">
+    <div class="flex min-h-screen">
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Header -->
+            <header class="flex items-center justify-between px-4 py-2 bg-white border-b">
+                <div class="text-sm font-semibold">
+                    Painel <span class="uppercase font-bold">AO VIVO</span>
+                </div>
+                <div class="text-sm font-semibold">
+                    TV: <span class="font-bold">03/04/2025</span> | Usuário: <span class="font-bold">Guido Possi</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button class="bg-red-400 hover:bg-red-500 text-white text-xs font-medium px-3 py-1 rounded">
+                        Finalizar TV de hoje
+                    </button>
+                    <a href="editar-imagens.html" class="bg-blue-500 hover:bg-blue-600 text-white text-xs font-medium px-3 py-1 rounded inline-flex items-center gap-1">
+                        <i class="fas fa-cog mr-1"></i>Configurações
+                    </a>
+                </div>
+            </header>
+
+            <!-- Navigation -->
+            <nav class="flex flex-wrap gap-2 px-4 py-2 bg-white border-b">
+                <a href="index.html" class="bg-gray-300 text-gray-700 rounded px-4 py-1.5 text-sm font-semibold hover:bg-gray-400">
+                    Sorteio NF Premiada
+                </a>
+                <a href="premio-bola-maior.html" class="bg-gray-300 text-gray-700 rounded px-4 py-1.5 text-sm font-semibold hover:bg-gray-400">
+                    Prêmio Extra
+                </a>
+                <a href="palpite-premiado.html" class="bg-gray-300 text-gray-700 rounded px-4 py-1.5 text-sm font-semibold hover:bg-gray-400">
+                    Palpite Premiado
+                </a>
+                <a href="audiencia.html" class="bg-gray-300 text-gray-700 rounded px-4 py-1.5 text-sm font-semibold hover:bg-gray-400">
+                    Audiência
+                </a>
+                <a href="fotos-comentarios.html" class="bg-gray-300 text-gray-700 rounded px-4 py-1.5 text-sm font-semibold hover:bg-gray-400">
+                    Fotos / Comentários
+                </a>
+                <a href="sorteios.html" class="bg-gray-300 text-gray-700 rounded px-4 py-1.5 text-sm font-semibold hover:bg-gray-400">
+                    Sorteio GRV/GRR/Festão
+                </a>
+                <a href="premiacoes.html" class="bg-green-400 text-white rounded px-4 py-1.5 text-sm font-semibold hover:bg-green-500">
+                    Premiações
+                </a>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 p-4 overflow-auto">
+                <div class="content-container content-wrapper space-y-6">
+                    <!-- Year Filter -->
+                    <div class="rounded-lg shadow-sm p-6 mb-6 hover:shadow-md transition-shadow">
+                    <div class="flex flex-wrap items-center gap-2 sm:gap-4 mb-4">
+                        <div class="text-gray-700">Mostrar premiações de:</div>
+                        <button class="year-button px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 transition-colors">
+                            Ano 2023
+                        </button>
+                        <button class="year-button px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 transition-colors">
+                            Ano 2024
+                        </button>
+                        <button class="year-button active px-4 py-2 rounded-md transition-colors">
+                            Ano 2025
+                        </button>
+                            <div class="flex items-center gap-2 mt-4 sm:mt-0">
+                            <span class="text-gray-700">Outros anos:</span>
+                            <input type="text" placeholder="Digite o ano" 
+                                   class="px-3 py-1 border border-gray-300 rounded-md w-32 focus:outline-none focus:ring-2 focus:ring-green-400">
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- Awards Table -->
+                    <div class="rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
+                    <h2 class="text-xl font-semibold mb-6">Premiações</h2>
+                        <div class="overflow-x-auto scrollbar-thin border border-gray-200 rounded-lg">
+                            <table class="min-w-full bg-white">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Data</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nome Fantasia</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Razão Social</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Prêmio</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">NF</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unidade</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cidade/UF</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Batida</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Inadimplente</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">CNPJ</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-100 transition-colors">
+                                    <td class="px-6 py-4">27/03/2025</td>
+                                    <td class="px-6 py-4">Braga Araújo</td>
+                                    <td class="px-6 py-4">Comercio de Insum...</td>
+                                    <td class="px-6 py-4">Alexa</td>
+                                    <td class="px-6 py-4 text-blue-600">9321</td>
+                                    <td class="px-6 py-4">Sete Lagoas</td>
+                                    <td class="px-6 py-4">Pirapora Nossa/MG</td>
+                                    <td class="px-6 py-4">16:32</td>
+                                    <td class="px-6 py-4">—</td>
+                                    <td class="px-6 py-4">07634924...</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100 transition-colors">
+                                    <td class="px-6 py-4">20/03/2025</td>
+                                    <td class="px-6 py-4">NULL</td>
+                                    <td class="px-6 py-4">Agro Revenda LTDA</td>
+                                    <td class="px-6 py-4">Moto Honda 160</td>
+                                    <td class="px-6 py-4 text-blue-600">0321</td>
+                                    <td class="px-6 py-4">Paulínia</td>
+                                    <td class="px-6 py-4">São Paulo/SP</td>
+                                    <td class="px-6 py-4">16:32</td>
+                                    <td class="px-6 py-4">—</td>
+                                    <td class="px-6 py-4">07634924...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <div class="right-panel-content">
+                <div class="right-panel-inner">
+                    <div class="flex flex-col space-y-4">
+                        <h2 class="text-sm font-semibold">Painel Exibir: NF Premiada/Extra/Fotos</h2>
+                        <a href="editar-imagens.html" class="btn-edit-bg">
+                            Editar imagens de fundo
+                        </a>
+                    </div>
+
+                    <hr class="my-6 border-gray-300">
+          <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <p class="text-sm mb-2 text-center">Sorteio</p>
+                            <div class="bg-white rounded-lg p-2 text-center">
+                                <div class="grid grid-cols-4 text-4xl font-mono text-orange-500">
+                                    <span>4</span>
+                                    <span>3</span>
+                                    <span>2</span>
+                                    <span>1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-sm mb-2 text-center">Neutro</p>
+                            <div class="bg-gradient-to-r from-orange-400 to-orange-500 rounded-lg p-2 flex items-center justify-center">
+                                <img src="https://via.placeholder.com/120x60?text=TV+AgRoss" alt="TV AgRoss" class="max-w-full" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sorteio Sections -->
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-sm font-semibold mb-2 text-center">1º Sorteio</h3>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-white p-2 rounded border text-center text-xs">
+                                    <img src="https://via.placeholder.com/80" alt="Premio" class="mx-auto mb-1" />
+                                    <p>Prêmio Centena</p>
+                                </div>
+                                <div class="bg-white p-2 rounded border text-center text-xs">
+                                    <img src="https://via.placeholder.com/80" alt="Premio" class="mx-auto mb-1" />
+                                    <p>Prêmio Milhar</p>
+                                </div>
+                                <div class="bg-white p-2 rounded border text-center text-xs">
+                                    <img src="https://via.placeholder.com/80" alt="Premio" class="mx-auto mb-1" />
+                                    <p>Prêmio Extra</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-sm font-semibold mb-2 text-center">2º Sorteio</h3>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="bg-white p-2 rounded border text-center text-xs">
+                                    <img src="https://via.placeholder.com/80" alt="Premio" class="mx-auto mb-1" />
+                                </div>
+                                <div class="bg-white p-2 rounded border text-center text-xs">
+                                    <img src="https://via.placeholder.com/80" alt="Premio" class="mx-auto mb-1" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-sm font-semibold mb-2 text-center">3º Sorteio</h3>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="bg-white p-2 rounded border text-center text-xs">
+                                    <img src="https://via.placeholder.com/80" alt="Premio" class="mx-auto mb-1" />
+                                </div>
+                                <div class="bg-white p-2 rounded border text-center text-xs">
+                                    <img src="https://via.placeholder.com/80" alt="Premio" class="mx-auto mb-1" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+          <!-- Fotos & Comentários -->
+          <div class="flex gap-2 mt-4">
+            <button class="flex-1 bg-green-400 hover:bg-green-500 text-white text-sm font-semibold py-1 px-2 rounded relative">
+              Fotos
+              <span class="absolute -top-1 -right-1 bg-gray-700 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">4</span>
+            </button>
+            <button class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm font-semibold py-1 px-2 rounded relative">
+              Comentários
+              <span class="absolute -top-1 -right-1 bg-gray-700 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">7</span>
+            </button>
+          </div>
+
+          <!-- Exemplo de Fotos Gallery -->
+          <div class="mt-4 px-2">
+                        <div class="grid grid-cols-3 gap-2">
+              <img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Exemplo 1" class="rounded object-cover w-full h-16">
+              <img src="https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600" alt="Exemplo 2" class="rounded object-cover w-full h-16">
+              <img src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Exemplo 3" class="rounded object-cover w-full h-16">
+            </div>
+          </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Year filter buttons functionality
+        document.querySelectorAll('.year-button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.year-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                button.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
